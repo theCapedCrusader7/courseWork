@@ -1,0 +1,3 @@
+First class is on Thursday, 23rd Sept 2021 at 2.30 pm.
+Welcome to the course BM2033-Probability and Random Processes. This course requires a background in libraries like Pandas,matplotlib,numpy etc.
+Hello everyone!
