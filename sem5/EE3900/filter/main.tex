@@ -297,7 +297,16 @@ The output of the python script in Problem \ref{prob:output} is the audio file S
 \begin{equation}
 x(n) = \cbrak{\underset{\uparrow}{1},2,3,4,2,1}
 \end{equation}
-Sketch $x(n)$.
+Sketch $x(n)$.\\
+\solution
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/3_1.py}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_1.png}
+\end{center}
+\captionof{figure}{}
+\label{fig:xnyn}	
+\end{figure}
 \item Let
 \begin{multline}
 \label{eq:iir_filter}
@@ -308,18 +317,26 @@ y(n) + \frac{1}{2}y(n-1) = x(n) + x(n-2),
 Sketch $y(n)$.  
 \\
 \solution The following code yields Fig. \ref{fig:xnyn}.
-\begin{lstlisting}
-wget https://github.com/gadepall/EE1310/raw/master/filter/codes/xnyn.py
-\end{lstlisting}
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/3_2.py}
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=\columnwidth]{./figs/xnyn}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_2.png}
 \end{center}
 \captionof{figure}{}
 \label{fig:xnyn}	
 \end{figure}
 \item Repeat the above exercise using a C code.
-
+\solution 
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/3_3.c}
+For plotting the data we can use the python code below
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/3_3.py}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_3.png}
+\end{center}
+\captionof{figure}{}
+\label{fig:xnyn}	
+\end{figure}
 \end{enumerate}
 \section{$Z$-transform}
 \begin{enumerate}[label=\thesection.\arabic*]
@@ -353,6 +370,17 @@ resulting in \eqref{eq:shift1}. Similarly, it can be shown that
 \end{equation}
 \item Obtain $X(z)$ for $x(n)$ defined in problem 
 	\ref{def:xn}.
+\solution
+\\Given that\\
+\begin{equation}
+	x(n) = \cbrak{\underset{\uparrow}{1},2,3,4,2,1}
+\end{equation}
+
+\begin{align}
+	X(z) &= \sum _{n= -\infty}^{\infty}x(n)z^{-n}
+	\\&=z^{-0}+2z^{-1}+3z^{-2}+4z^{-3}+2z^{-4}+1z^{-5}
+	\\&= 1+2z^{-1}+3z^{-2}+4z^{-3}+2z^{-4}+1z^{-5}
+\end{align}
 
 \item Find
 %
@@ -412,7 +440,18 @@ using the fomula for the sum of an infinite geometric progression.
 \label{eq:anun}
 a^nu(n) \ztrans \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
 \end{equation}
-%
+\solution \\
+Given that,
+\begin{equation}
+	f(n) =a^nu(n)	
+\end{equation} and u(n) is a unit step function.\\ Taking the Z transform of f(n) we get,
+\begin{align}
+	U(z) &= \sum _{n= -\infty}^{\infty}a^nu(n)z^{-n}
+	\\&=\sum _{n= -\infty}^{\infty}a^nz^{-n}
+	\\&= 1+az^{-1}+a^2z^{-2}+\dots
+	\\&=\frac{1}{1-az^{-1}}, \quad \abs{az^{-1}} <1
+	\\&=\frac{1}{1-az^{-1}}, \quad \abs{a} <\abs{z}
+\end{align}
 \item 
 Let
 \begin{equation}
@@ -422,16 +461,38 @@ Plot $\abs{H\brak{e^{\j \omega}}}$.  Is it periodic? If so, find the period. $H(
 known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
 \\
 \solution The following code plots Fig. \ref{fig:dtft}.
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/dtft.py
-\end{lstlisting}
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/4_6.py}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/dtft}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png}
 \caption{$\abs{H\brak{e^{\j\omega}}}$}
 \label{fig:dtft}
 \end{figure}
-\item Express $x(n)$ in terms of $H\brak{e^{\j \omega}}$.
+We know that 
+
+\begin{equation}
+	H(z) = \frac{1 + z^{-2}}{1 + \frac{1}{2}z^{-1}}	
+\end{equation}
+
+then,
+\begin{align}
+	H(e^{jw}) &=  \frac{1 + e^{-2jw}}{1 + \frac{1}{2}e^{-jw}}
+	\\&= \frac{1 + e^{2jw}}{e^{2jw} + \frac{1}{2}e^{jw}}
+	\\ \implies \abs{H(e^{jw})} &= \abs{\frac{1 + e^{2jw}}{e^{2jw} + \frac{1}{2}e^{jw}} }
+	\\&= \frac{\abs{1 + e^{2jw}}}{\abs{e^{2jw} + \frac{1}{2}e^{jw}}}
+	\\&= \frac{\abs{cos2w+1+2jsinw}*2}{\abs{e^{jw} + 1}}
+	\\&= \frac{\abs{cosw+jsinw}*4cosw}{\abs{2cosw+1+2jsinw}}
+	\\&= \frac{4cosw}{\sqrt{(2cosw+1)^{2}+4sin^{2}w}}
+	\\&= \frac{4cosw}{\sqrt{5+4cosw}}
+\end{align}
+Therefore 
+\begin{equation}
+	H(e^{jw}) = \frac{4cosw}{\sqrt{5+4cosw}}
+\end{equation}
+The period of this trignometric function is 2$\pi$
+
+
+\item Express $h(n)$ in terms of $H\brak{e^{\j \omega}}$.
 \end{enumerate}
 
 \section{Impulse Response}
