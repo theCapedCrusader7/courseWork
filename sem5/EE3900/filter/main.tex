@@ -38,6 +38,7 @@
 %\usepackage{iithtlc}
 %\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listings}
+\usepackage{polynom}
 
 
 %\usepackage{stmaryrd}
@@ -489,10 +490,49 @@ Therefore
 \begin{equation}
 	H(e^{jw}) = \frac{4cosw}{\sqrt{5+4cosw}}
 \end{equation}
-The period of this trignometric function is 2$\pi$
+The period of the function in the numerator here is $\pi$ and the period of the function in the denominator is 2$\pi$.
+\\Therefore the period of the function\\
+\begin{equation}
+	 H(e^{jw}) = \frac{4cosw}{\sqrt{5+4cosw}}
+\end{equation}
+is the lcm of the periods of its numerator and denominator which is 2$\pi$.
+
 
 
 \item Express $h(n)$ in terms of $H\brak{e^{\j \omega}}$.
+\\\solution 
+We know that\\
+\begin{align}
+	H\brak{e^{j\omega}}=\sum _{n= -\infty}^{\infty} h\brak{n} e^{-jn\omega }
+	\\\implies\brak{e^{j\omega}}*e^{jk\omega} &= \sum _{n= -\infty}^{\infty} h\brak{n} e^{-jn\omega} e^{jk\omega}
+	\\\implies\int_{-\pi}^{\pi} H\brak{e^{j\omega}}*e^{jk\omega}d\omega &= \int_{-\pi}^{\pi}\sum _{n= -\infty}^{\infty} h\brak{n} e^{-jn\omega} e^{jk\omega}
+	\\\implies\int_{-\pi}^{\pi} H\brak{e^{j\omega}}*e^{jk\omega}d\omega &= \sum _{n= -\infty}^{\infty} h\brak{n}\int_{-\pi}^{\pi} e^{-jn\omega} e^{jk\omega}
+\end{align}
+
+NOTE:
+We know that,
+\begin{equation}
+	\int_{-\pi}^{\pi} e^{-jn\omega} e^{jk\omega} 
+	=
+	\begin{cases}
+		2\pi & n = k
+		\\
+		0 & \text{otherwise}
+		\end{cases}
+\end{equation}	
+
+
+Hence,
+\begin{align}
+	\int_{-\pi}^{\pi} H\brak{e^{j\omega}}*e^{jk\omega}d\omega = \int_{-\pi}^{\pi}\sum _{n= -\infty}^{\infty} h\brak{n} e^{-jn\omega} e^{jk\omega}
+	\\\implies \int_{-\pi}^{\pi} H\brak{e^{j\omega}}*e^{jk\omega}d\omega = 2\pi h\brak{n}
+	\\\implies \frac{1}{2\pi} \int_{-\pi}^{\pi} H\brak{e^{j\omega}}*e^{jk\omega}d\omega = h\brak{n}
+\end{align}
+ 
+Therefore,\\
+\begin{align}
+	h(n) &= \frac{1}{2\pi}\int_{-\pi}^{\pi}H\brak{e^{j\omega}}e^{j\omega n}d\omega
+\end{align}
 \end{enumerate}
 
 \section{Impulse Response}
@@ -504,6 +544,40 @@ find
 		\end{align}
 		for H(z) in 
 		\eqref{eq:freq_resp}.
+	\\\solution\\
+	\begin{equation}
+		H(z) = \frac{1 + z^{-2}}{1 + \frac{1}{2} z^{-1}}
+	\end{equation}
+	Let $z^{-1} = x$,then, by polynomial long division we get
+	
+	\polylongdiv{1+x^2}{1+\frac12 x}
+\begin{align}
+	\implies (1+z^{-2})= (\frac{1}{2} z^{-1}+1)(2z^{-1}-4) + 5
+	\\\implies \frac{(1+z^{-2})}{\frac{1}{2} z^{-1}+1}= (2z^{-1}-4) + \frac{5}{\frac{1}{2} z^{-1}+1}
+	\\\implies H\brak{z}=(2z^{-1}-4) + \frac{5}{\frac{1}{2} z^{-1}+1}
+\end{align}
+
+Now, consider$ \frac{5}{\frac{1}{2} z^{-1}+1}$
+\\The denominator $\frac{1}{2} z^{-1}+1$ can be expressed as sum of an infinite geometric progression, which as its first term equal to 1 and common ratio $\frac{-1}{2}z^{-1}$
+\\Therefore, we can write $ \frac{5}{\frac{1}{2} z^{-1}+1}$ as 5\brak{1+\brak{\frac{-1}{2}z^{-1}}+\brak{\frac{-1}{2}z^{-1}}^{2}+\brak{\frac{-1}{2}z^{-1}}^{3}+\brak{\frac{-1}{2}z^{-1}}^{4}+\dots}	
+\\Therefore, H(z) can be given by,
+\\\begin{equation}
+	H(z)= (2z^{-1}-4) + \frac{5}{\frac{1}{2} z^{-1}+1}
+\end{equation}
+\begin{align}
+	\\= 2z^{-1} - 4 + 5 + \frac{-5}{2}z^{-1} + \frac{5}{4}z^{-2} + \frac{-5}{8}z^{-3} + \frac{5}{16}z^{-4} + \dots
+	\\\implies H(z)= 1z^{0} + \frac{-1}{2}z^{-1} +\frac{5}{4}z^{-2} + \frac{-5}{8}z^{-3} +\frac{5}{16}z^{-4} +\dots
+\end{align}
+Comparing the above expression to \eqref{eq:z_trans} we get h(n) for n$<$5 as, \\
+\begin{align} 
+	h(0) &= 1
+	\\h(1) &= \frac{-1}{2}
+	\\h(2) &= \frac{5}{4}
+	\\h(3) &= \frac{-5}{8}
+	\\h(4) &= \frac{5}{16}
+\end{align}
+
+
 \item \label{prob:impulse_resp}
 Find an expression for $h(n)$ using $H(z)$, given that 
 %in Problem \ref{eq:ztransab} and \eqref{eq:anun}, given that
@@ -524,17 +598,54 @@ using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \item Sketch $h(n)$. Is it bounded? Justify theoretically.
 \\
 \solution The following code plots Fig. \ref{fig:hn}.
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hn.py
-\end{lstlisting}
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_3.py}
 \begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/hn}
-\caption{$h(n)$ as the inverse of $H(z)$}
-\label{fig:hn}
-\end{figure}
+	\begin{center}
+	\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png}
+	\end{center}
+	\captionof{figure}{}
+	\label{fig:xnyn}	
+	\end{figure}
 %
 \item Convergent? Justify using the ratio test.
+\\\solution\\
+From the plot it seems like $h(n)$ is bounded and becomes smaller in magnitude as $n$ increases.\\
+    Using $\eqref{eq:hn}$, we can get theoritical expression as, 
+     \begin{align}
+       h\brak{n} &= \begin{cases}
+                        0 &, n < 0\\
+                        \brak{\frac{-1}{2}}^n &, 0\leq n<2\\
+                        5\brak{\frac{-1}{2}}^n &, n \geq 2
+                     \end{cases}\label{eq:hn_theo}
+     \end{align}
+    A sequence $\cbrak{x_n}$ is said to be bounded if and only if there exist a positive real number $M$ such that,
+         \begin{align}
+           \abs{x_n} \leq M , \forall n \in \mathcal{N}\label{def:bounded}
+         \end{align}      
+    So to say $h\brak{n}$ is bounded we should able to find the $M$ which satisfies $\eqref{def:bounded}$.\\
+    For n $<$ 0, 
+       \begin{align}
+    \abs{h\brak{n}} \leq 0 
+       \end{align}
+    For $0 \leq n <2$,
+       \begin{align}
+        \abs{h\brak{n}} &= \abs{\frac{-1}{2}}^{n}\\
+                        &= \brak{\frac{1}{2}}^{n} \leq 1
+       \end{align}
+    And for $n \geq 2$,
+       \begin{align}
+        \abs{h\brak{n}} &= \abs{5\brak{\frac{-1}{2}}}^{n}\\
+                        &= \brak{\frac{5}{2}}^{n} \leq \frac{5}{4}
+       \end{align}
+    From above three cases, we can get $M$ as,
+      \begin{align}
+        M &= max\cbrak{0,1,\frac{5}{4}} \\
+          &= \frac{5}{4}
+      \end{align}
+    Therefore, $h\brak{n}$ is bounded using $\eqref{def:bounded}$ with $M = \frac{5}{4}$ i.e.,
+    \begin{align} 
+      \abs{h(n)} \leq \frac{5}{4}  \forall n \in \mathcal{N}
+    \end{align}
 \item The system with $h(n)$ is defined to be stable if
 \begin{equation}
 \sum_{n=-\infty}^{\infty}h(n) < \infty

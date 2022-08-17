@@ -150,6 +150,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/polynom/polynom.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/polynom/polynom.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
@@ -341,9 +343,15 @@ INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/codes/4_6.py
 INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png
 INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png
 INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/./figs/hn.pdf
-INPUT ./figs/hn.pdf
-INPUT ./figs/hn.pdf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txr.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_3.py
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_3.py
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_3.py
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png
 INPUT /home/saqib/iith/courseWork/sem5/EE3900/filter/./figs/hndef.pdf
 INPUT ./figs/hndef.pdf
 INPUT ./figs/hndef.pdf
