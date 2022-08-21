@@ -490,12 +490,29 @@ Therefore
 \begin{equation}
 	H(e^{jw}) = \frac{4cosw}{\sqrt{5+4cosw}}
 \end{equation}
-The period of the function in the numerator here is $\pi$ and the period of the function in the denominator is 2$\pi$.
-\\Therefore the period of the function\\
+Consider 
 \begin{equation}
-	 H(e^{jw}) = \frac{4cosw}{\sqrt{5+4cosw}}
+	\label{eq:func_period}
+	f\brak{x}=\frac{4cosx}{\sqrt{5+4cosx}}
 \end{equation}
-is the lcm of the periods of its numerator and denominator which is 2$\pi$.
+then
+\begin{equation}
+	\label{eq:func_period_new}
+	f\brak{x+t}=\frac{4cos(x+t)}{\sqrt{5+4cos(x+t)}}
+\end{equation}
+\begin{align}
+	f\brak{x+t}=\frac{4cos(x+t)}{\sqrt{5+4cos(x+t)}}
+	\\=\frac{4(cosxcost-sinxsint)}{\sqrt{5+4(cosxcost-sinxsint)}}
+\end{align}
+By comparing \eqref{eq:func_period} and \eqref{eq:func_period_new}, we get\\
+cost=1 and sint=0
+\\This is true for $t=2k\pi$. This implies that the principal period of this function is $2\pi$.
+% The period of the function in the numerator here is $\pi$ and the period of the function in the denominator is 2$\pi$.
+% \\Therefore the period of the function\\
+% \begin{equation}
+% 	 H(e^{jw}) = \frac{4cosw}{\sqrt{5+4cosw}}
+% \end{equation}
+% is the lcm of the periods of its numerator and denominator which is 2$\pi$.
 
 
 
@@ -593,11 +610,12 @@ system defined by \eqref{eq:iir_filter}.
 H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
 \\
 \implies h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
+\label{eq:hn_exp}
 \end{align}
 using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \item Sketch $h(n)$. Is it bounded? Justify theoretically.
 \\
-\solution The following code plots Fig. \ref{fig:hn}.
+\solution The following code plots Fig. \ref{fig:xnyn}.
 \lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_3.py}
 \begin{figure}[!ht]
 	\begin{center}
@@ -605,51 +623,66 @@ using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 	\end{center}
 	\captionof{figure}{}
 	\label{fig:xnyn}	
-	\end{figure}
-%
-\item Convergent? Justify using the ratio test.
-\\\solution\\
-From the plot it seems like $h(n)$ is bounded and becomes smaller in magnitude as $n$ increases.\\
-    Using $\eqref{eq:hn}$, we can get theoritical expression as, 
-     \begin{align}
-       h\brak{n} &= \begin{cases}
-                        0 &, n < 0\\
-                        \brak{\frac{-1}{2}}^n &, 0\leq n<2\\
-                        5\brak{\frac{-1}{2}}^n &, n \geq 2
-                     \end{cases}\label{eq:hn_theo}
-     \end{align}
-    A sequence $\cbrak{x_n}$ is said to be bounded if and only if there exist a positive real number $M$ such that,
-         \begin{align}
-           \abs{x_n} \leq M , \forall n \in \mathcal{N}\label{def:bounded}
-         \end{align}      
-    So to say $h\brak{n}$ is bounded we should able to find the $M$ which satisfies $\eqref{def:bounded}$.\\
-    For n $<$ 0, 
-       \begin{align}
-    \abs{h\brak{n}} \leq 0 
-       \end{align}
-    For $0 \leq n <2$,
-       \begin{align}
-        \abs{h\brak{n}} &= \abs{\frac{-1}{2}}^{n}\\
-                        &= \brak{\frac{1}{2}}^{n} \leq 1
-       \end{align}
-    And for $n \geq 2$,
-       \begin{align}
-        \abs{h\brak{n}} &= \abs{5\brak{\frac{-1}{2}}}^{n}\\
-                        &= \brak{\frac{5}{2}}^{n} \leq \frac{5}{4}
-       \end{align}
-    From above three cases, we can get $M$ as,
+\end{figure}
+From \eqref{eq:hn_exp} we know that\\
+\begin{equation}
+	h(n) = \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
+\end{equation}
+Implies we can write that\\
+\begin{align}
+	h\brak{n} &= \begin{cases}
+					 0 &, n < 0\\
+					 \brak{\frac{-1}{2}}^n &, 0\leq n<2\\
+					 5\brak{\frac{-1}{2}}^n &, n \geq 2
+				  \end{cases}\label{eq:hn_theoritical_def}
+\end{align}
+A sequence is said to be bounded when 
+\begin{align}
+	\abs{x_n} \leq M , \forall n \in \mathcal{N}\label{def:bounded_seq_def}
+\end{align}  
+
+Now consider \eqref{eq:hn_theoritical_def},\\
+For n$<$0,
+\begin{equation}
+	\abs{h\brak{n}} \leq 0
+\end{equation}
+For $0 \leq n <$ 2,
+\begin{align}
+	\abs{h\brak{n}} = (\frac{1}{2})^n\\
+	\implies \abs{h\brak{n}} \leq 1
+\end{align}
+For $n\geq 2$,
+\begin{align}
+	\abs{h\brak{n}} = 5(\frac{1}{2})^n\\
+	\implies \abs{h\brak{n}} \leq 5
+\end{align}
+
+From above we can say that,
       \begin{align}
-        M &= max\cbrak{0,1,\frac{5}{4}} \\
-          &= \frac{5}{4}
+        M &= max\cbrak{0,1,5} \\
+          &= 5\label{eq:hn_bounded_proof}
       \end{align}
-    Therefore, $h\brak{n}$ is bounded using $\eqref{def:bounded}$ with $M = \frac{5}{4}$ i.e.,
-    \begin{align} 
-      \abs{h(n)} \leq \frac{5}{4}  \forall n \in \mathcal{N}
-    \end{align}
+
+Therefore since $M$ exists and is a real value, we can say that h\brak{n} is bounded.
+\item Convergent? Justify using the ratio test.\\
+\solution\\
+We can check if a sequence os convergent by ratio test. From the defination of ratio test we can say that a sequence is convergent if 
+\begin{equation}
+	\lim_{n \rightarrow \infty}\abs{\frac{x_{n+1}}{x_n}} < 1
+\end{equation}
+Here, applying ratio test on \eqref{eq:hn_exp} is same as applying ratio test on \eqref{eq:hn_theoritical_def}
+\begin{align}
+	\lim_{n \rightarrow \infty}\abs{\frac{h(n+1)}{h(n)}} = \lim_{n \rightarrow \infty}\abs{\frac{5(\frac{-1}{2})^{n+1}}{5(\frac{-1}{2})^{n}}}
+	\\= \abs{\frac{-1}{2}}
+	\\= \frac{1}{2}\label{eq:convergent_proof}
+\end{align}
+From \eqref{eq:convergent_proof} we can clearly say that the sequence h\brak{n} is convergent.
+
 \item The system with $h(n)$ is defined to be stable if
 \begin{equation}
 \sum_{n=-\infty}^{\infty}h(n) < \infty
 \end{equation}
+
 Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?
 %
 \item Verify the above result using a python code.
