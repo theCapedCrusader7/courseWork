@@ -684,10 +684,28 @@ From \eqref{eq:convergent_proof} we can clearly say that the sequence h\brak{n} 
 \end{equation}
 
 Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?
-%
+\\\solution\\
+From \eqref{eq:hn_exp} we know that,
+\begin{equation}
+	h(n) = \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
+\end{equation}
+Given that, a system is stable when 
+\begin{equation}
+	\sum_{n=-\infty}^{\infty}h(n) < \infty
+\end{equation}
+\begin{align}
+	\implies \sum_{n=-\infty}^{\infty}h(n) = \sum_{n=-\infty}^{\infty} (\brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2))
+	\\ = 2*\sum_{n=-\infty}^{\infty} \brak{-\frac{1}{2}}^{n}u(n)
+\end{align}
+\begin{align}
+	\implies \sum_{n=-\infty}^{\infty}h(n) = 2*(\frac{1}{1+\frac{1}{2}})
+	\\= \frac{4}{3} < \infty
+\end{align}
+Hence, the system is stable.
 \item Verify the above result using a python code.
-\item 
-Compute and sketch $h(n)$ using 
+\solution\\
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_6.py}
+\item Compute and sketch $h(n)$ using 
 \begin{equation}
 \label{eq:iir_filter_h}
 h(n) + \frac{1}{2}h(n-1) = \delta(n) + \delta(n-2), 
@@ -698,12 +716,10 @@ This is the definition of $h(n)$.
 \solution The following code plots Fig. \ref{fig:hndef}. Note that this is the same as Fig. 
 \ref{fig:hn}. 
 %
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hndef.py
-\end{lstlisting}
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_7.py}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/hndef}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_7.png}
 \caption{$h(n)$ from the definition}
 \label{fig:hndef}
 \end{figure}
@@ -712,7 +728,7 @@ wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hndef
 %
 \begin{equation}
 \label{eq:convolution}
-y(n) = x(n)*h(n) = \sum_{n=-\infty}^{\infty}x(k)h(n-k)
+y(n) = x(n)*h(n) = \sum_{k=-\infty}^{\infty}x(k)h(n-k)
 \end{equation}
 %
 Comment. The operation in \eqref{eq:convolution} is known as
@@ -723,21 +739,42 @@ Comment. The operation in \eqref{eq:convolution} is known as
 $y(n)$ in  Fig. 
 \ref{fig:xnyn}. 
 %
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/ynconv.py
-\end{lstlisting}
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_8.py}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/ynconv}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_8.png}
 \caption{$y(n)$ from the definition of convolution}
 \label{fig:ynconv}
 \end{figure}
 \item Express the above convolution using a Teoplitz matrix.
+\\\solution\\
+% \begin{align}
+% 	\vec{y} = \vec{x} \circledast \vec{h}\\
+% 	& \vec{y} = \myvec{ h_1 & 0 & . & . & . & 0 \\ h_2 & h_1 & . & . & . & 0 \\ h_3 & h_2 & h_1 & . & . & 0 \\ h_{m-1} & . & . & . & h_2 & h_1 \\ h_m & h_{m-1} &. & . & . & h_2 \\ . & . &. & . & . & . \\ . & . & . & . & . & . \\ 0 & 0 & . & . & . & h_m } \myvec{x_1 \\ x_2 \\ . \\ . \\ . \\ . \\ x_n}
+% \end{align}
+% \begin{align}
+% 	\vec{y}&=\myvec{1 & 0&0 & 0 & 0 & 0 \\ \frac{-1}{2} & 1&0&0&0&0\\\frac{5}{4}&\frac{-1}{2}&1&0&0&0\\\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}&1&0&0\\\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}&1&0\\ \frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}&1\\\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}\\ 0&\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}\\0&0&\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}\\0&0&0&\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}\\0&0&0&0&\frac{5}{64}&\frac{-5}{32}\\0&0&0&0&0&\frac{5}{64}}\myvec{1\\2\\3\\4\\2\\1}
+% 	&=\myvec{1.   \\     1.5\\3.25\\4.375\\2.8125\\3.59375\\0.203125\\0.9375\\-0.390625\\0.3125\\0.\\	   0.078125}
+% \end{align}
+	And this is what we got in \eqref{eq:convolution}
 
 \item Show that
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
 \end{equation}
+\\\solution\\
+From the defination of convolution given in \eqref{eq:convolution},we know that,
+\begin{equation}
+	y(n) = x(n)*h(n) = \sum_{k=-\infty}^{\infty}x(k)h(n-k)
+\end{equation}
+\begin{align}
+	\implies y\brak{n} = \sum_{k=-\infty}^{\infty}x(k)h(n-k)
+\end{align}
+Replace $k$ with $n-k$. Now since n varies from n=$-\infty$ to n=$\infty$, n-k will also vary from $-\infty$ to $\infty$. Therefore, we get,
+\begin{align}
+	y\brak{n} = \sum_{n-k=-\infty}^{\infty}x(n-k)h(k)	
+	\\=\sum_{k=-\infty}^{\infty}x(n-k)h(k)
+\end{align}
 \end{enumerate}
 
 %
