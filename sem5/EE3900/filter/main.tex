@@ -748,16 +748,37 @@ $y(n)$ in  Fig.
 \end{figure}
 \item Express the above convolution using a Teoplitz matrix.
 \\\solution\\
-% \begin{align}
-% 	\vec{y} = \vec{x} \circledast \vec{h}\\
-% 	& \vec{y} = \myvec{ h_1 & 0 & . & . & . & 0 \\ h_2 & h_1 & . & . & . & 0 \\ h_3 & h_2 & h_1 & . & . & 0 \\ h_{m-1} & . & . & . & h_2 & h_1 \\ h_m & h_{m-1} &. & . & . & h_2 \\ . & . &. & . & . & . \\ . & . & . & . & . & . \\ 0 & 0 & . & . & . & h_m } \myvec{x_1 \\ x_2 \\ . \\ . \\ . \\ . \\ x_n}
-% \end{align}
-% \begin{align}
-% 	\vec{y}&=\myvec{1 & 0&0 & 0 & 0 & 0 \\ \frac{-1}{2} & 1&0&0&0&0\\\frac{5}{4}&\frac{-1}{2}&1&0&0&0\\\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}&1&0&0\\\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}&1&0\\ \frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}&1\\\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}&\frac{-1}{2}\\ 0&\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}&\frac{5}{4}\\0&0&\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}&\frac{-5}{8}\\0&0&0&\frac{5}{64}&\frac{-5}{32}&\frac{5}{16}\\0&0&0&0&\frac{5}{64}&\frac{-5}{32}\\0&0&0&0&0&\frac{5}{64}}\myvec{1\\2\\3\\4\\2\\1}
-% 	&=\myvec{1.   \\     1.5\\3.25\\4.375\\2.8125\\3.59375\\0.203125\\0.9375\\-0.390625\\0.3125\\0.\\	   0.078125}
-% \end{align}
-	And this is what we got in \eqref{eq:convolution}
 
+We know that from, \eqref{eq:convolution},
+\begin{equation}
+	y(n) = x(n)*h(n) = \sum_{k=-\infty}^{\infty}x(k)h(n-k)
+\end{equation}
+This can also be wrtten as a matrix-vector multiplication given by the expression,
+\begin{equation}
+	\label{eq:conv_matrix_vec_mult}
+	y = T\brak{h}*x
+\end{equation}
+In the equation \eqref{eq:conv_matrix_vec_mult}, $T\brak{h}$ is a Teoplitz matrix.
+\\ The equation \eqref{eq:conv_matrix_vec_mult} can be expanded as,
+\begin{align}
+	\mtx{y} &= \mtx{x} \circledast \mtx{h}\\
+	\mtx{y} &= 
+	\begin{pmatrix}
+		h_1 & 0 & . & . & . & 0 \\
+		h_2 & h_1 & . & . & . & 0 \\
+		h_3 & h_2 & h_1 & . & . & 0 \\
+		. & . & . & . & . & . \\
+		h_{n-1} & h_{n-2} & h_{n-3} & . & . & 0\\
+		h_{n} & h_{n-1} & h_{n-2} & . & . & h_1\\
+		0 & h_{n} & h_{n-1} & h_{n-2} & . & h_2\\
+		. & . & . & . & . & . \\
+		0 & . & . & . & 0 & h_{n-1} \\
+		0 & . & . & . & 0 & h_n \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 \\ x_2 \\ .\\.\\. \\ x_n
+	\end{pmatrix}
+\end{align}
 \item Show that
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
@@ -786,10 +807,51 @@ Compute
 X(k) \define \sum _{n=0}^{N-1}x(n) e^{-\j2\pi kn/N}, \quad k = 0,1,\dots, N-1
 \end{equation}
 and $H(k)$ using $h(n)$.
+\\\solution\\
+From \ref{def:xn}, we know that ,
+\begin{equation}
+	x(n) = \cbrak{\underset{\uparrow}{1},2,3,4,2,1}
+\end{equation}
+%  Let, $e^{-j2\pi k} = \omega$. Then,
+% \begin{equation}
+% 	X(k) = \sum _{n=0}^{N-1}x(n) \omega^{n/N}
+% \end{equation}
+Here, let, $\omega=e^{-j2\pi k}$. Then,
+\begin{align}
+	X(k)=1+2\omega^{\frac{1}{5}}+3\omega^{\frac{2}{5}}+4\omega^{\frac{3}{5}}+2\omega^{\frac{4}{5}}+\omega
+	\label{eq:Xkdef}
+\end{align}
+
+Similarly, we know from \eqref{eq:hn_theoritical_def},
+\begin{align}
+	h\brak{n} &= \begin{cases}
+					 0 &, n < 0\\
+					 \brak{\frac{-1}{2}}^n &, 0\leq n<2\\
+					 5\brak{\frac{-1}{2}}^n &, n \geq 2
+				  \end{cases}
+\end{align}
+Now,again let, $\omega=e^{-j2\pi k}$. Then,
+\begin{align}
+	H(k)=1+\frac{-1}{2}\omega^{\frac{1}{5}}+\frac{5}{4}\omega^{\frac{2}{5}}+\frac{-5}{8}\omega^{\frac{3}{5}}+\frac{5}{16}\omega^{\frac{4}{5}}+\frac{-5}{32}\omega
+	\label{eq:Hkdef}
+\end{align}
+
 \item Compute 
 \begin{equation}
 Y(k) = X(k)H(k)
 \end{equation}
+\\\solution\\Now, from \eqref{eq:Xkdef} and \eqref{eq:Hkdef}, we know $X(k) and H(k)$. Now, given that,
+\begin{equation}
+	Y\brak{k}=X\brak{k}*H\brak{k}
+\end{equation}
+%\polyadd\PolynomX{1+2\omega^{\frac{1}{5}}+3\omega^{\frac{2}{5}}+4\omega^{\frac{3}{5}}+2\omega^{\frac{4}{5}}+\omega}{0}
+\begin{multline}
+	Y\brak{k}= (1+2\omega^{\frac{1}{5}}+3\omega^{\frac{2}{5}}+4\omega^{\frac{3}{5}}+2\omega^{\frac{4}{5}}+\omega)* \\(1+\frac{-1}{2}\omega^{\frac{1}{5}}+\frac{5}{4}\omega^{\frac{2}{5}}+\frac{-5}{8}\omega^{\frac{3}{5}}+\frac{5}{16}\omega^{\frac{4}{5}}+\frac{-5}{32}\omega)
+\end{multline}
+\begin{multline}
+	Y\brak{k}= 1+\frac{3}{2}\omega^{\frac{1}{5}}+\frac{13}{4}\omega^{\frac{2}{5}}+\frac{35}{8}\omega^{\frac{3}{5}}+\frac{45}{16}\omega^{\frac{4}{5}}\\\frac{115}{32}\omega^{\frac{5}{5}}+\frac{1}{8}\omega^{\frac{6}{5}}+\frac{25}{32}\omega^{\frac{7}{5}}-\frac{5}{8}\omega^{\frac{8}{5}}\\-\frac{5}{32}\omega^{5} 
+\end{multline}
+where, $\omega=e^{-j2k\pi}$
 \item Compute
 \begin{equation}
  y\brak{n}={\frac {1}{N}}\sum _{k=0}^{N-1}Y\brak{k}\cdot e^{\j 2\pi kn/N},\quad n = 0,1,\dots, N-1
@@ -799,12 +861,11 @@ Y(k) = X(k)H(k)
 $y(n)$ in  Fig. 
 \ref{fig:xnyn}. 
 %
-\begin{lstlisting}
-wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/yndft.py
-\end{lstlisting}
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/6_3.py}
+
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/yndft}
+\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_3.png}
 \caption{$y(n)$ from the DFT}
 \label{fig:yndft}
 \end{figure}
