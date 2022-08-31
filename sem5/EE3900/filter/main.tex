@@ -838,7 +838,8 @@ Now,again let, $\omega=e^{-j2\pi k}$. Then,
 
 \item Compute 
 \begin{equation}
-Y(k) = X(k)H(k)
+	\label{eq:comp_yk}	
+	Y(k) = X(k)H(k)
 \end{equation}
 \\\solution\\Now, from \eqref{eq:Xkdef} and \eqref{eq:Hkdef}, we know $X(k) and H(k)$. Now, given that,
 \begin{equation}
@@ -849,7 +850,7 @@ Y(k) = X(k)H(k)
 	Y\brak{k}= (1+2\omega^{\frac{1}{5}}+3\omega^{\frac{2}{5}}+4\omega^{\frac{3}{5}}+2\omega^{\frac{4}{5}}+\omega)* \\(1+\frac{-1}{2}\omega^{\frac{1}{5}}+\frac{5}{4}\omega^{\frac{2}{5}}+\frac{-5}{8}\omega^{\frac{3}{5}}+\frac{5}{16}\omega^{\frac{4}{5}}+\frac{-5}{32}\omega)
 \end{multline}
 \begin{multline}
-	Y\brak{k}= 1+\frac{3}{2}\omega^{\frac{1}{5}}+\frac{13}{4}\omega^{\frac{2}{5}}+\frac{35}{8}\omega^{\frac{3}{5}}+\frac{45}{16}\omega^{\frac{4}{5}}\\\frac{115}{32}\omega^{\frac{5}{5}}+\frac{1}{8}\omega^{\frac{6}{5}}+\frac{25}{32}\omega^{\frac{7}{5}}-\frac{5}{8}\omega^{\frac{8}{5}}\\-\frac{5}{32}\omega^{5} 
+	Y\brak{k}= 1+\frac{3}{2}\omega^{\frac{1}{5}}+\frac{13}{4}\omega^{\frac{2}{5}}+\frac{35}{8}\omega^{\frac{3}{5}}+\frac{45}{16}\omega^{\frac{4}{5}}\\\frac{115}{32}\omega^{\frac{5}{5}}+\frac{1}{8}\omega^{\frac{6}{5}}+\frac{25}{32}\omega^{\frac{7}{5}}-\frac{5}{8}\omega^{\frac{8}{5}}\\-\frac{5}{32}\omega^{2} 
 \end{multline}
 where, $\omega=e^{-j2k\pi}$
 \item Compute
@@ -872,8 +873,64 @@ $y(n)$ in  Fig.
 
 \item Repeat the previous exercise by computing $X(k), H(k)$ and $y(n)$ through FFT and 
 IFFT.
+\\\solution\\
+\lstinputlisting{codes/6_4.py}
+This code gives the below figure
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4.png}
+	\caption{$y(n)$ from different techniques}
+	\label{fig:yndft}
+	\end{figure}
 \item Wherever possible, express all the above equations as matrix equations.
+\\\solution\\
+We use the DFT Matrix, where $\omega = e^{-\frac{j2k\pi}{N}}$, which is given by
+\begin{align}
+	\mtx{W} = 
+	\begin{pmatrix}
+		\omega^0 & \omega^0 & \ldots & \omega^0 \\
+		\omega^0 & \omega^1 & \ldots & \omega^{N - 1} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		\omega^0 & \omega^{N - 1} & \ldots & \omega^{(N -1)(N - 1)}
+	\end{pmatrix}
+\end{align}
+i.e. $W_{jk} = \omega^{jk}$, $0 \leq j, k < N$. Hence, we can write any DFT equation as
+\begin{align}
+	\mtx{X} = \mtx{W}\mtx{x} = \mtx{x}\mtx{W}
+\end{align}
+\noindent where
+\begin{align}
+	\mtx{x} = 
+	\begin{pmatrix}
+		x(0) \\ x(1) \\ \vdots \\ x(n - 1)
+	\end{pmatrix}
+\end{align}
+The inverse Fourier Transform is given by
+\begin{align}
+	\mtx{x} = \mathcal{F}^{-1}\brak{\mtx{X}} = \mtx{W}^{-1}\mtx{X} &= 
+	\frac{1}{N}\mtx{W^{H}}\mtx{X} = \frac{1}{N}\mtx{X}\mtx{W^{H}} \\ 
+	\implies \mtx{W}^{-1} &= \frac{1}{N}\mtx{W^{H}}
+\end{align}
+ where $H$ denotes hermitian operator. We can rewrite \eqref{eq:comp_yk} using the
+element-wise multiplication operator as
+\begin{align}
+	\mtx{Y} = \mtx{H}\cdot\mtx{X} = \brak{\mtx{W}\mtx{h}}\cdot\brak{\mtx{W}\mtx{x}}
+\end{align}
+
 \item Verify the above equations by generating the DFT matrix in python.
+\\\solution\\
+The following code gives the figure
+\lstinputlisting{/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/6._6.py}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_6.png}
+	\caption{$y(n)$ from DFT Matrix}
+	\label{fig:yndftmat}
+	\end{figure}
+We can see that the Fig. \ref{fig:yndftmat} is same as in Fig \ref{fig:xnyn}
+\item Compute the 8 point FFT in C.
+\\\solution\\
+
 \end{enumerate}
 %
 \section{Exercises}
@@ -893,6 +950,8 @@ in Problem \ref{prob:output} is executed through the following difference equati
 %
 where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace
 \textbf{signal.filtfilt} with your own routine and verify.
+\\\solution\\
+
 %
 \item Repeat all the exercises in the previous sections for the above $a$ and $b$.
 
