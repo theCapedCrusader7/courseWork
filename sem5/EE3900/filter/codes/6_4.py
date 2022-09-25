@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy
 
-N = 20
+N = 11
 
 def x(n):
     if n < 0 or n > 5:

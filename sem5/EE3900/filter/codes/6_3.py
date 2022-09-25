@@ -1,42 +1,60 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import scipy
 
 N = 11
-n = np.arange(N)
-fn=(-1/2)**n
-hn1=np.pad(fn, (0,2), 'constant', constant_values=(0))
-hn2=np.pad(fn, (2,0), 'constant', constant_values=(0))
-h = hn1+hn2
 
-xtemp=np.array([1.0,2.0,3.0,4.0,2.0,1.0])
-x=np.pad(xtemp, (0,8), 'constant', constant_values=(0))
+def x(n):
+    if n < 0 or n > 5:
+        return 0
+    elif n < 4:
+        return n + 1
+    else:
+        return 6 - n
 
-X = np.zeros(N) + 1j*np.zeros(N)
-for k in range(0,N):
-	for n in range(0,N):
-		X[k]+=x[n]*np.exp(-1j*2*np.pi*n*k/N)
-H = np.zeros(N) + 1j*np.zeros(N)
-for k in range(0,N):
-	for n in range(0,N):
-		H[k]+=h[n]*np.exp(-1j*2*np.pi*n*k/N)
+def y(n):
+    if n < 0:
+        return 0
+    else:
+        return x(n) + x(n-2) - 0.5 * y(n-1)
 
-Y = np.zeros(N) + 1j*np.zeros(N)
-for k in range(0,N):
-	Y[k] = X[k]*H[k]
+def delta(n):
+    if n == 0:
+        return 1
+    else:
+        return 0
 
-y = np.zeros(N) + 1j*np.zeros(N)
-for k in range(0,N):
-	for n in range(0,N):
-		y[k]+=Y[n]*np.exp(1j*2*np.pi*n*k/N)
+def h(n):
+    if n == 0:
+        return 1
+    elif n > 0:
+        return delta(n) + delta(n-2) - 0.5*h(n-1)
+    else:
+        return 2*(delta(n+1) + delta(n-1) - h(n+1))
 
-#print(X)
-y = np.real(y)/N
-#plots
-plt.stem(range(0,N),y)
+def DFT(k, inp):
+    ksum = 0
+    for n in range(N):
+        ksum += inp(n) * np.exp(-2j * np.pi * k * n / N)
+    return ksum
+
+def Y(k):
+    return DFT(k, x) * DFT(k, h)
+
+def IDFT(n, inp):
+    nsum = 0
+    for k in range(N):
+        nsum += inp(k) * np.exp(2j * np.pi * k * n / N)
+    return nsum / N
+
+vec_y = scipy.vectorize(y)
+
+nvalues = np.linspace(0, N-1, N)
+plt.stem(nvalues, vec_y(nvalues), markerfmt='bo', label='$y(n)$')
+plt.stem(nvalues, np.real(IDFT(nvalues, Y)), linefmt='r--', markerfmt='ro', label='$y_D(n)$')
 plt.title('Filter Output using DFT')
-plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
-plt.grid()# minor
-#
+plt.xlabel('$n$')
+plt.legend()
+plt.grid()
 plt.show()
