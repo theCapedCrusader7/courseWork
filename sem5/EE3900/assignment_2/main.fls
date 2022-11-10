@@ -1,10 +1,10 @@
-PWD /home/saqib/iith/courseWork/sem5/EE3900/assignment 2
+PWD /home/saqib/iith/courseWork/sem5/EE3900/assignment_2
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.tex
-OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.log
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.tex
+OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
@@ -156,9 +156,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.aux
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.aux
-OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.aux
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.aux
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.aux
+OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
@@ -223,17 +223,17 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.pdf
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/fig.png
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/fig.png
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/fig.png
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+OUTPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.pdf
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/fig.png
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/fig.png
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/fig.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
@@ -299,9 +299,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txmi.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.aux
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
-INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.aux
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
+INPUT /home/saqib/iith/courseWork/sem5/EE3900/assignment_2/main.out
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb
