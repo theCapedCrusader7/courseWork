@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1664344345 "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.tex" "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.pdf" "main" 1664344345
+["pdflatex"] 1668055457 "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.tex" "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.pdf" "main" 1668055458
   "/etc/texmf/web2c/texmf.cnf" 1643823520 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.aux" 1664344345 729 1e88db6c3dbcc2bed35108de6873aa20 ""
-  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.tex" 1664344344 6692 842fa041b137bfec4dcb40c60fd76e9e ""
+  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.aux" 1668055458 985 a755ba2b161ae8c30e9506b59118561f ""
+  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.tex" 1668055457 7635 585841354a14b191819f6b3be4472020 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -123,13 +123,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659979960 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1659979998 8258504 5a7e901aab3e1aa75ca92ff2a4d1660e ""
-  "main.aux" 1664344345 729 1e88db6c3dbcc2bed35108de6873aa20 "pdflatex"
-  "main.out" 1664344345 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1664344344 6692 842fa041b137bfec4dcb40c60fd76e9e ""
+  "fig.png" 1667571086 7099 d7339e90b181b8fcc7560eed0f9d328f ""
+  "main.aux" 1668055458 985 a755ba2b161ae8c30e9506b59118561f "pdflatex"
+  "main.out" 1668055457 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1668055457 7635 585841354a14b191819f6b3be4472020 ""
   (generated)
-  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.log"
-  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.pdf"
-  "main.out"
   "main.aux"
-  "main.log"
   "main.pdf"
+  "main.out"
+  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.log"
+  "main.log"
+  "/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/main.pdf"

@@ -199,19 +199,50 @@ columns=fullflexible
 This document contains the solution to Exercise 2.22(d) of Signals and systems-Oppenheim and shafer.
 \end{abstract}
 
-\problem Given that,
+\problem Given that, For each of the pairs of sequences in Figure, use the discrete convolution to find the response to the input x[n] of the linear time-invariant system with impulse response h[n].
 
+\begin{figure}[!htb]
+    \includegraphics[width=\columnwidth]{/home/saqib/iith/courseWork/sem5/EE3900/assignment 2/fig.png}
+    \caption{}
+    \label{fig:ques_def} 
+\end{figure}
+
+\solution\\
+As we know the to compute the convolution: 
+\begin{equation}
+    \label{eq:convolution}
+    y(n) = x(n)*h(n) = \sum_{n=-\infty}^{\infty}x(k)h(n-k)
+\end{equation}
+
+Given that
 \begin{align}
-	h\brak{n} &= \begin{cases}
-					 0 &, n < -2\\
-					 1 &, n=-2\\
-                     2 &, n=-1\\
-                     1 &=,n=0\\
-					 5\brak{\frac{-1}{2}}^n &, n \geq 2
-				  \end{cases}\label{eq:xn_def}
+    x[n] = \{0,2,-1,0,0\} 
 \end{align}
-
-Calculate h(n)
-\\\solution\\ 
+\begin{align}
+    h[n] = \{0,-1,2,1,0\} 
+\end{align}
+Now we will compute the values of y[n] 
+\begin{align}
+    y[n] = \sum_{n=-\infty}^{\infty}x(k)h(n-k)
+\end{align}
+\begin{align}
+    y[-1] = x(-1)h(0)+x(0)h(-1) = 0
+\end{align}
+\begin{align}
+    y[0] = x(-1)h(1)+x(0)h(0)+x(1)h(-1) = -2
+\end{align}
+\begin{align}
+    y[1] = x(-1)h(2)+x(0)h(1)+x(1)h(0)+x(2)h(-1) = 5
+\end{align}
+\begin{align}
+    y[2] = x(-1)h(3)+x(0)h(2)+x(1)h(1)+x(2)h(0)+x(3)h(-1) = 0
+\end{align}
+\begin{align}
+    y[3] = x(0)h(3)+x(1)h(2)+x(2)h(1) = -1
+\end{align}
+Hence we have y[n] as
+\begin{align}
+    y[n] = \{0,-2,5,0,-1\} 
+\end{align}
 
 \end{document}
