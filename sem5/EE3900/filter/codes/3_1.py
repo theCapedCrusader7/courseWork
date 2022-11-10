@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 #If using termux
-#import subprocess
-#import shlex
+import subprocess
+import shlex
 #end if
 
 
@@ -19,3 +19,6 @@ plt.ylabel('$x(n)$')
 plt.grid()# minor
 
 plt.show()
+
+# for termux
+

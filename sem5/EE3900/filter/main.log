@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.8)  29 SEP 2022 10:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.8)  10 NOV 2022 10:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,11 +748,8 @@ File: omltxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
 (Font)              Font shape `OML/txmi/m/it' tried instead on input line 19.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [2 </home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_1.png>])
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_2.png, id=176, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_2.png, id=177, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_2.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_2.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_2.png  used on input line 352.
@@ -765,7 +762,7 @@ File: omstxr.fd 2000/12/15 v3.1
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 5.
 ) (/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/3_3.py)
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_3.png, id=177, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_3.png, id=178, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_3.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_3.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/3_3.png  used on input line 364.
@@ -804,7 +801,7 @@ LaTeX Warning: Command \j invalid in math mode on input line 489.
 LaTeX Warning: Command \j invalid in math mode on input line 489.
 
 (/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/4_6.py)
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png, id=295, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png, id=296, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/4_6.png  used on input line 496.
@@ -881,7 +878,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 615--617
 Underfull \vbox (badness 6995) has occurred while \output is active []
 
 )
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png, id=380, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png, id=381, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_3.png  used on input line 650.
@@ -917,13 +914,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 733--735
 LaTeX Warning: Reference `fig:hn' on page 8 undefined on input line 745.
 
 (/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_7.py [8])
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_7.png, id=484, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_7.png, id=485, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_7.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_7.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_7.png  used on input line 750.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
  (/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/5_8.py)
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_8.png, id=488, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_8.png, id=489, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_8.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_8.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/5_8.png  used on input line 773.
@@ -957,7 +954,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_3.png, id=581, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_3.png, id=582, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_3.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_3.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_3.png  used on input line 897.
@@ -971,7 +968,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 902--905
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4.png, id=662, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4.png, id=663, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4.png  used on input line 909.
@@ -980,7 +977,7 @@ Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_4
 Underfull \vbox (badness 6658) has occurred while \output is active []
 
 )
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_6.png, id=732, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_6.png, id=733, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_6.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_6.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/6_6.png  used on input line 954.
@@ -1237,17 +1234,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 6001) has occurred while \output is active []
 
 ) (/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/7_2_2.py) [18] (/home/saqib/iith/courseWork/sem5/EE3900/filter/codes/7_2_3.py)
-<figs/7_2_1.png, id=1061, 462.528pt x 346.896pt>
+<figs/7_2_1.png, id=1062, 462.528pt x 346.896pt>
 File: figs/7_2_1.png Graphic file (type png)
 <use figs/7_2_1.png>
 Package pdftex.def Info: figs/7_2_1.png  used on input line 1516.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/7_2_2.png, id=1062, 462.528pt x 346.896pt>
+</home/saqib/iith/courseWork/sem5/EE3900/filter/figs/7_2_2.png, id=1063, 462.528pt x 346.896pt>
 File: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/7_2_2.png Graphic file (type png)
 <use /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/7_2_2.png>
 Package pdftex.def Info: /home/saqib/iith/courseWork/sem5/EE3900/filter/figs/7_2_2.png  used on input line 1521.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/7_2_3.png, id=1063, 462.528pt x 346.896pt>
+<figs/7_2_3.png, id=1064, 462.528pt x 346.896pt>
 File: figs/7_2_3.png Graphic file (type png)
 <use figs/7_2_3.png>
 Package pdftex.def Info: figs/7_2_3.png  used on input line 1526.
@@ -1272,18 +1269,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1545.
  ) 
 Here is how much of TeX's memory you used:
- 13972 strings out of 481239
- 214178 string characters out of 5920378
+ 13973 strings out of 481239
+ 214193 string characters out of 5920378
  708263 words of memory out of 5000000
  28007 multiletter control sequences out of 15000+600000
  597733 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,17n,42p,363b,1905s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/saqib/iith/courseWork/sem5/EE3900/filter/main.pdf (20 pages, 371757 bytes).
+Output written on /home/saqib/iith/courseWork/sem5/EE3900/filter/main.pdf (20 pages, 371825 bytes).
 PDF statistics:
- 1362 PDF objects out of 1440 (max. 8388607)
- 1289 compressed objects within 13 object streams
- 921 named destinations out of 1000 (max. 500000)
+ 1363 PDF objects out of 1440 (max. 8388607)
+ 1290 compressed objects within 13 object streams
+ 922 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

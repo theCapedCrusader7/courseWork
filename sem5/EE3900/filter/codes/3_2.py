@@ -41,4 +41,3 @@ plt.grid()# minor
 #If using termux
 
 #else
-plt.show()
