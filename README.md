@@ -1,2 +1,2 @@
 ## coursework
-Doesnt really need more explanation xD
+Contains the assignments I had done for my Btech coursework
